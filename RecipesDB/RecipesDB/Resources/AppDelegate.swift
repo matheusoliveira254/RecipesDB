@@ -13,10 +13,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        NetworkingController.fetchCategories { categories in
+            guard let categories = categories else {return}
+            for category in categories {
+                print(category.strCategory)
+                NetworkingController.fetchMeals(for: category.strCategory!) { meals in
+                      guard let meals = meals else {return}
+                      for meal in meals {
+                          print(meal.strMeal)
+                      }
+                  }
+            }
+        }
+        
         // Override point for customization after application launch.
+//        NetworkingController.fetchMeals(for: "Beef") { meals in
+//            guard let meals = meals else {return}
+//            for meal in meals {
+//                print(meal.strMeal)
+//            }
+//        }
         return true
     }
-
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
