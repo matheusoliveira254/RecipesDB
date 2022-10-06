@@ -14,7 +14,11 @@
 		A1A540E628EE58C000369AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A540E428EE58C000369AFD /* LaunchScreen.storyboard */; };
 		A1A540F028EF25D300369AFD /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540EF28EF25D300369AFD /* Categories.swift */; };
 		A1A540F228EF2C9100369AFD /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540F128EF2C9100369AFD /* Meal.swift */; };
-		A1A540F528EF32A800369AFD /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540F428EF32A800369AFD /* Instructions.swift */; };
+		A1A540F528EF32A800369AFD /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540F428EF32A800369AFD /* MealDetail.swift */; };
+		A1A540F728EF3F2E00369AFD /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540F628EF3F2E00369AFD /* CategoriesController.swift */; };
+		A1A540F928EF3F3D00369AFD /* MealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540F828EF3F3D00369AFD /* MealController.swift */; };
+		A1A540FB28EF3F5D00369AFD /* MealDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540FA28EF3F5D00369AFD /* MealDetailController.swift */; };
+		A1A540FF28EF424200369AFD /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540FE28EF424200369AFD /* NetworkingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +31,11 @@
 		A1A540E728EE58C000369AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1A540EF28EF25D300369AFD /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		A1A540F128EF2C9100369AFD /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		A1A540F428EF32A800369AFD /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		A1A540F428EF32A800369AFD /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
+		A1A540F628EF3F2E00369AFD /* CategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
+		A1A540F828EF3F3D00369AFD /* MealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealController.swift; sourceTree = "<group>"; };
+		A1A540FA28EF3F5D00369AFD /* MealDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailController.swift; sourceTree = "<group>"; };
+		A1A540FE28EF424200369AFD /* NetworkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,7 @@
 				A1A540ED28EF257E00369AFD /* Resources */,
 				A1A540EE28EF258C00369AFD /* Storyboard */,
 				A1A540F328EF2FE700369AFD /* Models */,
+				A1A540FC28EF3F6500369AFD /* Controllers */,
 			);
 			path = RecipesDB;
 			sourceTree = "<group>";
@@ -92,9 +101,28 @@
 			children = (
 				A1A540EF28EF25D300369AFD /* Categories.swift */,
 				A1A540F128EF2C9100369AFD /* Meal.swift */,
-				A1A540F428EF32A800369AFD /* Instructions.swift */,
+				A1A540F428EF32A800369AFD /* MealDetail.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A1A540FC28EF3F6500369AFD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A1A540FD28EF3F7700369AFD /* Model Controller */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A1A540FD28EF3F7700369AFD /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1A540FE28EF424200369AFD /* NetworkingController.swift */,
+				A1A540F628EF3F2E00369AFD /* CategoriesController.swift */,
+				A1A540F828EF3F3D00369AFD /* MealController.swift */,
+				A1A540FA28EF3F5D00369AFD /* MealDetailController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +196,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A540FF28EF424200369AFD /* NetworkingController.swift in Sources */,
+				A1A540FB28EF3F5D00369AFD /* MealDetailController.swift in Sources */,
 				A1A540F028EF25D300369AFD /* Categories.swift in Sources */,
-				A1A540F528EF32A800369AFD /* Instructions.swift in Sources */,
+				A1A540F528EF32A800369AFD /* MealDetail.swift in Sources */,
 				A1A540DA28EE58BF00369AFD /* AppDelegate.swift in Sources */,
+				A1A540F728EF3F2E00369AFD /* CategoriesController.swift in Sources */,
+				A1A540F928EF3F3D00369AFD /* MealController.swift in Sources */,
 				A1A540DC28EE58BF00369AFD /* SceneDelegate.swift in Sources */,
 				A1A540F228EF2C9100369AFD /* Meal.swift in Sources */,
 			);

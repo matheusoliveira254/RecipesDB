@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Instructions {
+class MealDetail {
     let strMeal: String?
     let strCategory: String?
     let strArea: String?
@@ -21,7 +21,7 @@ class Instructions {
     }
 }//End of Class
 
-extension Instructions {
+extension MealDetail {
     convenience init?(mealDetailDictionary: [String: String]) {
         guard let mealName = mealDetailDictionary["strMeal"],
         let mealCategory = mealDetailDictionary["strCategory"],
