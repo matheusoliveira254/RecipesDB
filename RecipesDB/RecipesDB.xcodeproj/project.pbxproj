@@ -9,25 +9,25 @@
 /* Begin PBXBuildFile section */
 		A1A540DA28EE58BF00369AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540D928EE58BF00369AFD /* AppDelegate.swift */; };
 		A1A540DC28EE58BF00369AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540DB28EE58BF00369AFD /* SceneDelegate.swift */; };
-		A1A540DE28EE58BF00369AFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540DD28EE58BF00369AFD /* ViewController.swift */; };
 		A1A540E128EE58BF00369AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A540DF28EE58BF00369AFD /* Main.storyboard */; };
 		A1A540E328EE58C000369AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A540E228EE58C000369AFD /* Assets.xcassets */; };
 		A1A540E628EE58C000369AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A540E428EE58C000369AFD /* LaunchScreen.storyboard */; };
 		A1A540F028EF25D300369AFD /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540EF28EF25D300369AFD /* Categories.swift */; };
 		A1A540F228EF2C9100369AFD /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540F128EF2C9100369AFD /* Meal.swift */; };
+		A1A540F528EF32A800369AFD /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540F428EF32A800369AFD /* Instructions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A1A540D628EE58BF00369AFD /* RecipesDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A540D928EE58BF00369AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A540DB28EE58BF00369AFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A1A540DD28EE58BF00369AFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1A540E028EE58BF00369AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1A540E228EE58C000369AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1A540E528EE58C000369AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1A540E728EE58C000369AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1A540EF28EF25D300369AFD /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		A1A540F128EF2C9100369AFD /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		A1A540F428EF32A800369AFD /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +60,9 @@
 		A1A540D828EE58BF00369AFD /* RecipesDB */ = {
 			isa = PBXGroup;
 			children = (
-				A1A540DD28EE58BF00369AFD /* ViewController.swift */,
 				A1A540ED28EF257E00369AFD /* Resources */,
 				A1A540EE28EF258C00369AFD /* Storyboard */,
-				A1A540EF28EF25D300369AFD /* Categories.swift */,
-				A1A540F128EF2C9100369AFD /* Meal.swift */,
+				A1A540F328EF2FE700369AFD /* Models */,
 			);
 			path = RecipesDB;
 			sourceTree = "<group>";
@@ -87,6 +85,16 @@
 				A1A540E428EE58C000369AFD /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A1A540F328EF2FE700369AFD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1A540EF28EF25D300369AFD /* Categories.swift */,
+				A1A540F128EF2C9100369AFD /* Meal.swift */,
+				A1A540F428EF32A800369AFD /* Instructions.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,8 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A540DE28EE58BF00369AFD /* ViewController.swift in Sources */,
 				A1A540F028EF25D300369AFD /* Categories.swift in Sources */,
+				A1A540F528EF32A800369AFD /* Instructions.swift in Sources */,
 				A1A540DA28EE58BF00369AFD /* AppDelegate.swift in Sources */,
 				A1A540DC28EE58BF00369AFD /* SceneDelegate.swift in Sources */,
 				A1A540F228EF2C9100369AFD /* Meal.swift in Sources */,
@@ -313,7 +321,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WHCBWLCWQ4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RecipesDB/Info.plist;
+				INFOPLIST_FILE = RecipesDB/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -341,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WHCBWLCWQ4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RecipesDB/Info.plist;
+				INFOPLIST_FILE = RecipesDB/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
