@@ -22,11 +22,11 @@ class MealDetail {
 }//End of Class
 
 extension MealDetail {
-    convenience init?(mealDetailDictionary: [String: String]) {
-        guard let mealName = mealDetailDictionary["strMeal"],
-        let mealCategory = mealDetailDictionary["strCategory"],
-        let mealOrigin = mealDetailDictionary["strArea"],
-        let mealInstructions = mealDetailDictionary["strInstructions"] else {return nil}
+    convenience init?(mealDetailDictionary: [String: Any]) {
+        guard let mealName = mealDetailDictionary["strMeal"] as? String,
+        let mealCategory = mealDetailDictionary["strCategory"] as? String,
+        let mealOrigin = mealDetailDictionary["strArea"] as? String,
+        let mealInstructions = mealDetailDictionary["strInstructions"] as? String else {return nil}
         
         self.init(strMeal: mealName, strCategory: mealCategory, strArea: mealOrigin, strInstructions: mealInstructions)
     }

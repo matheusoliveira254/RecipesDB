@@ -16,7 +16,7 @@ class NetworkingController {
 //    private static let apiKey = "1"
     private static let categoriesComponent = "categories"
     private static let filterComponent = "filter"
-    private static let mealDetailsByIDQuery = "lookup"
+    private static let lookupComponent = "lookup"
     private static let php = "php"
     private static let queryItemC = "c"
     private static let queryItemI = "i"
@@ -91,14 +91,34 @@ class NetworkingController {
     }//End of Func
     
     //Meal Detail
-    static func fetchDetails(for meal: Meal, completion: @escaping (MealDetail?) -> Void) {
+    static func fetchDetails(for meal: String, completion: @escaping (MealDetail?) -> Void) {
         guard let url = URL(string: baseURL) else {completion(nil); return}
-        guard let mealQuery = meal.idMeal else {completion(nil); return}
-//        
-//        let apiURL = url.appendingPathComponent(apiComponent)
-//        let jsonURL = apiURL.appendingPathComponent(JSONComponent)
-//        let mealDetailURL = jsonURL.appendingPathComponent(mealDetailsByIDQuery)
-//        let finalURL = mealDetailURL.appendingPathExtension(mealQuery)
+        
+        let lookupURL = url.appendingPathComponent(lookupComponent)
+        let phpURL = lookupURL.appendingPathExtension(php)
+        //URL query items
+        var urlComponents = URLComponents(url: phpURL, resolvingAgainstBaseURL: true)
+        let mealQueryItem = URLQueryItem(name: queryItemI, value: meal)
+        urlComponents?.queryItems = [mealQueryItem]
+        
+        guard let finalURL = urlComponents?.url else {completion(nil); return}
+        print(finalURL)
+        
+        URLSession.shared.dataTask(with: finalURL) { detailData, _, error in
+            if let error {
+                print("❌Something went wrong with detail url", error.localizedDescription)
+                completion(nil)
+                return
+            }
+            guard let detailsData = detailData else {print("❌Something went wrong with the detail data"); completion(nil); return}
+            
+            do {
+                guard let detailTopLevelDictionary = try? JSONSerialization.jsonObject(with: detailsData) as? [String: Any] else {completion(nil); return}
+                
+                let mealDetail = MealDetail(mealDetailDictionary: detailTopLevelDictionary)
+                completion(mealDetail)
+            }
+        }.resume()
     }
 }
 
