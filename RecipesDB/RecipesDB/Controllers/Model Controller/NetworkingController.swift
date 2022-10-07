@@ -114,9 +114,11 @@ class NetworkingController {
             
             do {
                 guard let detailTopLevelDictionary = try? JSONSerialization.jsonObject(with: detailsData) as? [String: Any] else {completion(nil); return}
-                
-                let mealDetail = MealDetail(mealDetailDictionary: detailTopLevelDictionary)
-                completion(mealDetail)
+                guard let mealsArray = detailTopLevelDictionary["meals"] as? [[String: Any]] else {completion(nil); return}
+                for array in mealsArray {
+                    let mealDetail = MealDetail(mealDetailDictionary: array)
+                    completion(mealDetail)
+                }
             }
         }.resume()
     }

@@ -12,18 +12,27 @@
         <!--Categories-->
         <scene sceneID="S9S-ph-CEC">
             <objects>
-                <tableViewController id="RLd-2K-a9N" sceneMemberID="viewController">
+                <tableViewController id="RLd-2K-a9N" customClass="CategoriesListTableViewController" customModule="RecipesDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ig9-Jb-BA9">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="72" id="xbG-xs-ezt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="nhX-2x-yk2" rowHeight="72" style="IBUITableViewCellStyleDefault" id="xbG-xs-ezt">
                                 <rect key="frame" x="0.0" y="50" width="390" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xbG-xs-ezt" id="mfU-fG-dwz">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nhX-2x-yk2">
+                                            <rect key="frame" x="20" y="0.0" width="350" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="V7y-IV-ItA" kind="show" identifier="toMealTableViewController" id="QaU-bV-2vN"/>
@@ -44,18 +53,27 @@
         <!--Meals-->
         <scene sceneID="gZR-YI-MN6">
             <objects>
-                <tableViewController id="V7y-IV-ItA" sceneMemberID="viewController">
+                <tableViewController id="V7y-IV-ItA" customClass="MealListTableViewController" customModule="RecipesDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="IkV-jq-BRL">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mealCell" rowHeight="72" id="2Yg-Tr-1dY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mealCell" textLabel="3al-qz-sDp" rowHeight="72" style="IBUITableViewCellStyleDefault" id="2Yg-Tr-1dY">
                                 <rect key="frame" x="0.0" y="50" width="390" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Yg-Tr-1dY" id="63T-Yf-JQ2">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3al-qz-sDp">
+                                            <rect key="frame" x="20" y="0.0" width="350" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="xUc-BG-xSh" kind="show" identifier="toMealDetailViewController" id="Iqm-1g-tLW"/>
@@ -76,7 +94,7 @@
         <!--Details-->
         <scene sceneID="ec5-nf-AQj">
             <objects>
-                <viewController id="xUc-BG-xSh" sceneMemberID="viewController">
+                <viewController id="xUc-BG-xSh" customClass="MealDetailViewController" customModule="RecipesDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Dw-9d-FaP">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,6 +189,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="gvU-0l-m87"/>
+                    <connections>
+                        <outlet property="mealCategoryTextField" destination="ekf-eR-yQ5" id="yfy-8E-smR"/>
+                        <outlet property="mealIntructionsTextField" destination="icG-u9-g7I" id="lE5-nH-SDr"/>
+                        <outlet property="mealOriginTextField" destination="c15-V8-mu6" id="1vT-07-kDJ"/>
+                        <outlet property="mealPictureImageView" destination="Uap-Kh-O4J" id="l2O-dV-11H"/>
+                        <outlet property="mealTitleLabel" destination="OXz-MY-sXg" id="bAY-mh-lv3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgf-ao-gTF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
