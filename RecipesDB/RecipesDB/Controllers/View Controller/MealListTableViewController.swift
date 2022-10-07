@@ -33,6 +33,7 @@ class MealListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mealCell", for: indexPath)
         let meal = tempArrayMeal[indexPath.row]
+        cell.imageView?.loadImageFrom(imageURL: meal.strMealThumb)
         cell.textLabel?.text = meal.strMeal
         return cell
     }

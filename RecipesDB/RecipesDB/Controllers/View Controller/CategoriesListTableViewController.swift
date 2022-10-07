@@ -32,6 +32,7 @@ class CategoriesListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
         let category = tempCategoriesArray[indexPath.row]
+        cell.imageView?.loadImageFrom(imageURL: category.strCategoryThumb)
         cell.textLabel?.text = category.strCategory
         return cell
     }

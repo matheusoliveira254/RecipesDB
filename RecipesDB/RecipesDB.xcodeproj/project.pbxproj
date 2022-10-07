@@ -19,6 +19,7 @@
 		A1A5410428EF789000369AFD /* CategoriesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5410328EF789000369AFD /* CategoriesListTableViewController.swift */; };
 		A1A5410628EF78A800369AFD /* MealListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5410528EF78A800369AFD /* MealListTableViewController.swift */; };
 		A1A5410828EF78E500369AFD /* MealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5410728EF78E500369AFD /* MealDetailViewController.swift */; };
+		A1A5410B28F0C20100369AFD /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5410A28F0C20100369AFD /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A1A5410328EF789000369AFD /* CategoriesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListTableViewController.swift; sourceTree = "<group>"; };
 		A1A5410528EF78A800369AFD /* MealListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListTableViewController.swift; sourceTree = "<group>"; };
 		A1A5410728EF78E500369AFD /* MealDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewController.swift; sourceTree = "<group>"; };
+		A1A5410A28F0C20100369AFD /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A540FE28EF424200369AFD /* NetworkingController.swift */,
+				A1A5410A28F0C20100369AFD /* UIImageViewExtension.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				A1A5410628EF78A800369AFD /* MealListTableViewController.swift in Sources */,
 				A1A540F528EF32A800369AFD /* MealDetail.swift in Sources */,
 				A1A540DA28EE58BF00369AFD /* AppDelegate.swift in Sources */,
+				A1A5410B28F0C20100369AFD /* UIImageViewExtension.swift in Sources */,
 				A1A5410428EF789000369AFD /* CategoriesListTableViewController.swift in Sources */,
 				A1A540DC28EE58BF00369AFD /* SceneDelegate.swift in Sources */,
 				A1A540F228EF2C9100369AFD /* Meal.swift in Sources */,

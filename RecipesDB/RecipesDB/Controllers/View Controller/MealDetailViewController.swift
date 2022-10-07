@@ -36,5 +36,6 @@ class MealDetailViewController: UIViewController {
         mealCategoryTextField.text = tempMealDetailArray?.strCategory
         mealOriginTextField.text = tempMealDetailArray?.strArea
         mealIntructionsTextField.text = tempMealDetailArray?.strInstructions
+        mealPictureImageView.loadImageFrom(imageURL: mealToReceive?.strMealThumb)
     }
 }
