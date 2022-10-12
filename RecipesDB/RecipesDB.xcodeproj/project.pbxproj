@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A153EF6128F7275A000F5FA7 /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A153EF6028F7275A000F5FA7 /* ResultError.swift */; };
 		A1A540DA28EE58BF00369AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540D928EE58BF00369AFD /* AppDelegate.swift */; };
 		A1A540DC28EE58BF00369AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A540DB28EE58BF00369AFD /* SceneDelegate.swift */; };
 		A1A540E128EE58BF00369AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A540DF28EE58BF00369AFD /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A153EF6028F7275A000F5FA7 /* ResultError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
 		A1A540D628EE58BF00369AFD /* RecipesDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A540D928EE58BF00369AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A540DB28EE58BF00369AFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A540FE28EF424200369AFD /* NetworkingController.swift */,
+				A153EF6028F7275A000F5FA7 /* ResultError.swift */,
 				A1A5410A28F0C20100369AFD /* UIImageViewExtension.swift */,
 			);
 			path = "Model Controller";
@@ -209,6 +212,7 @@
 			files = (
 				A1A540FF28EF424200369AFD /* NetworkingController.swift in Sources */,
 				A1A540F028EF25D300369AFD /* Categories.swift in Sources */,
+				A153EF6128F7275A000F5FA7 /* ResultError.swift in Sources */,
 				A1A5410828EF78E500369AFD /* MealDetailViewController.swift in Sources */,
 				A1A5410628EF78A800369AFD /* MealListTableViewController.swift in Sources */,
 				A1A540F528EF32A800369AFD /* MealDetail.swift in Sources */,

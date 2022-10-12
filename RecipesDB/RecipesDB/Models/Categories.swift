@@ -7,24 +7,24 @@
 
 import Foundation
 
-class Categories {
+struct CategoriesTopLevelDictionary: Decodable {
+    let categories: [Categories]
+}
+
+struct Categories: Decodable {
     let strCategory: String?
     let strCategoryThumb: String?
     
-    init(strCategory: String?, strCategoryThumb: String?) {
-        self.strCategory = strCategory
-        self.strCategoryThumb = strCategoryThumb
-    }
 }//End of Class
 
-extension Categories {
-    convenience init?(categoriesDictionary: [String: String]) {
-        guard let categories = categoriesDictionary["strCategory"],
-              let image = categoriesDictionary["strCategoryThumb"] else {return nil}
-        
-        self.init(strCategory: categories, strCategoryThumb: image)
-    }
-}
+//extension Categories {
+//    convenience init?(categoriesDictionary: [String: String]) {
+//        guard let categories = categoriesDictionary["strCategory"],
+//              let image = categoriesDictionary["strCategoryThumb"] else {return nil}
+//
+//        self.init(strCategory: categories, strCategoryThumb: image)
+//    }
+//}
 /*
  {
              "idCategory": "1",

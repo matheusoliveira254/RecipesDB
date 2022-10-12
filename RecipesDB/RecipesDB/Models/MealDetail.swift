@@ -7,18 +7,16 @@
 
 import Foundation
 
-class MealDetail {
+struct MealDetailsTopLevelDictionary: Decodable {
+    let mealDetail: MealDetail
+}
+
+struct MealDetail: Decodable {
     let strMeal: String?
     let strCategory: String?
     let strArea: String?
     let strInstructions: String?
     
-    init(strMeal: String?, strCategory: String?, strArea: String?, strInstructions: String?) {
-        self.strMeal = strMeal
-        self.strCategory = strCategory
-        self.strArea = strArea
-        self.strInstructions = strInstructions
-    }
 }//End of Class
 
 extension MealDetail {

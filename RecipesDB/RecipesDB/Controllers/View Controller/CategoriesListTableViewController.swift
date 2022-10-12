@@ -7,17 +7,22 @@
 
 import UIKit
 
+//            DispatchQueue.main.async {
+//                self.tempCategoriesArray = categories
+//                self.tableView.reloadData()
+//            }
+
 class CategoriesListTableViewController: UITableViewController {
     
-    var tempCategoriesArray: [Categories] = []
+    var categories: CategoriesTopLevelDictionary?
+    var tempCategoriesArray: [CategoriesTopLevelDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkingController.fetchCategories { categories in
-            guard let categories = categories else {return}
-            DispatchQueue.main.async {
-                self.tempCategoriesArray = categories
-                self.tableView.reloadData()
+        NetworkingController.fetchCategories { [weak self] results in
+            switch results {
+            case .success(let categories):
+                self?.tempCategoriesArray = categories
             }
         }
     }

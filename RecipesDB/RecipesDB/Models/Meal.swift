@@ -7,27 +7,26 @@
 
 import Foundation
 
-class Meal {
+struct MealTopLevelDictionary: Decodable {
+    let meal: [Meal]
+}
+
+struct Meal: Decodable {
     let strMeal: String?
     let strMealThumb: String?
     let idMeal: String?
     
-    init(strMeal: String?, strMealThumb: String?, idMeal: String?) {
-        self.strMeal = strMeal
-        self.strMealThumb = strMealThumb
-        self.idMeal = idMeal
-    }
 }//End of CLass
 
-extension Meal {
-    convenience init?(mealDictionary: [String: String]) {
-        guard let meal = mealDictionary["strMeal"],
-              let image = mealDictionary["strMealThumb"],
-              let id = mealDictionary["idMeal"] else {return nil}
-        
-        self.init(strMeal: meal, strMealThumb: image, idMeal: id)
-    }
-}
+//extension Meal {
+//    convenience init?(mealDictionary: [String: String]) {
+//        guard let meal = mealDictionary["strMeal"],
+//              let image = mealDictionary["strMealThumb"],
+//              let id = mealDictionary["idMeal"] else {return nil}
+//        
+//        self.init(strMeal: meal, strMealThumb: image, idMeal: id)
+//    }
+//}
 
 /*
  {
