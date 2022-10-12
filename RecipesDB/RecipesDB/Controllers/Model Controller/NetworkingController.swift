@@ -21,14 +21,14 @@ class NetworkingController {
     //MARK: - CRUD
     
     //Categories
-    static func fetchCategories(completion: @escaping (Result<CategoriesTopLevelDictionary, ResultError>) -> Void) {
+    static func fetchCategories(completion: @escaping (Result<[Categories], ResultError>) -> Void) {
         guard let url = URL(string: baseURL) else {return}
         
                 let categoriesURL = url.appendingPathComponent(categoriesComponent)
                 let finalCategoriesURL = categoriesURL.appendingPathExtension(php)
                 print(finalCategoriesURL)
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        URLSession.shared.dataTask(with: finalCategoriesURL) { data, _, error in
             if let error {
                 print("❌Something went wrong", error.localizedDescription)
                 completion(.failure(.thrownError(error)))
@@ -37,7 +37,8 @@ class NetworkingController {
             guard let categoriesData = data else {print("❌Something went wrong with the data"); completion(.failure(.noData)); return}
             
             do {
-                let categories = try JSONDecoder().decode(CategoriesTopLevelDictionary.self, from: categoriesData)
+                let topLevelDictionary = try JSONDecoder().decode(CategoriesTopLevelDictionary.self, from: categoriesData)
+                let categories = topLevelDictionary.categories
                 completion(.success(categories))
             } catch {
                 completion(.failure(.unableToDecode))
@@ -46,14 +47,14 @@ class NetworkingController {
     }//End of Func
     
     //Meals
-    static func fetchMeals(for urlString: String, completion: @escaping (Result<Meal, ResultError>) -> Void) {
-        guard let url2 = URL(string: urlString) else {return}
+    static func fetchMeals(for category: String, completion: @escaping (Result<[Meal], ResultError>) -> Void) {
+        guard let url2 = URL(string: baseURL) else {return}
         
         let filterURL = url2.appendingPathComponent(filterComponent)
         let phpURL = filterURL.appendingPathExtension(php)
         //url query items
         var urlComponents = URLComponents(url: phpURL, resolvingAgainstBaseURL: true)
-        let categoryQueryItem = URLQueryItem(name: queryItemC, value: categoriesComponent)
+        let categoryQueryItem = URLQueryItem(name: queryItemC, value: category)
         urlComponents?.queryItems = [categoryQueryItem]
         guard let finalURL = urlComponents?.url else {completion(.failure(.invalidURL(url2))); return}
         print(finalURL)
@@ -67,7 +68,8 @@ class NetworkingController {
             guard let mealsData = mealData else {print("❌Something went wrong with the meals data"); completion(.failure(.noData)); return}
             
             do {
-                let meals = try JSONDecoder().decode(Meal.self, from: mealsData)
+                let mealTopLevelDictionary = try JSONDecoder().decode(MealTopLevelDictionary.self, from: mealsData)
+                let meals = mealTopLevelDictionary.meals
                 completion(.success(meals))
             } catch {
                 completion(.failure(.unableToDecode))
@@ -76,7 +78,7 @@ class NetworkingController {
     }//End of Func
     
     //Meal Detail
-    static func fetchDetails(for meal: String, completion: @escaping (Result<MealDetail, ResultError>) -> Void) {
+    static func fetchDetails(for meal: String, completion: @escaping (Result<[MealDetail], ResultError>) -> Void) {
         guard let url3 = URL(string: baseURL) else {return}
         
         let lookupURL = url3.appendingPathComponent(lookupComponent)
@@ -98,7 +100,8 @@ class NetworkingController {
             guard let detailsData = detailData else {print("❌Something went wrong with the detail data"); completion(.failure(.noData)); return}
             
             do {
-                let mealDetail = try JSONDecoder().decode(MealDetail.self, from: detailsData)
+                let detailTopLevelObject = try JSONDecoder().decode(MealDetailsTopLevelDictionary.self, from: detailsData)
+                let mealDetail = detailTopLevelObject.meals
                 completion(.success(mealDetail))
             } catch {
                 completion(.failure(.unableToDecode))

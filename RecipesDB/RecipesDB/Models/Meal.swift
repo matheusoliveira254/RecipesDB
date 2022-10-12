@@ -8,7 +8,7 @@
 import Foundation
 
 struct MealTopLevelDictionary: Decodable {
-    let meal: [Meal]
+    let meals: [Meal]
 }
 
 struct Meal: Decodable {
@@ -17,16 +17,6 @@ struct Meal: Decodable {
     let idMeal: String?
     
 }//End of CLass
-
-//extension Meal {
-//    convenience init?(mealDictionary: [String: String]) {
-//        guard let meal = mealDictionary["strMeal"],
-//              let image = mealDictionary["strMealThumb"],
-//              let id = mealDictionary["idMeal"] else {return nil}
-//        
-//        self.init(strMeal: meal, strMealThumb: image, idMeal: id)
-//    }
-//}
 
 /*
  {

@@ -8,21 +8,26 @@
 import UIKit
 
 class MealListTableViewController: UITableViewController {
-
+    
+    var meals: Meal?
     var categoryToReceive: Categories?
     var tempArrayMeal: [Meal] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let categoryToReceive = categoryToReceive else {return}
-        NetworkingController.fetchMeals(for: categoryToReceive.strCategory!) { meals in
-            guard let meals = meals else {return}
-            DispatchQueue.main.async {
-                self.tempArrayMeal = meals
-                self.tableView.reloadData()
+        NetworkingController.fetchMeals(for: categoryToReceive.strCategory!) { [weak self] result in
+            switch result {
+            case .success(let meals):
+                self?.tempArrayMeal = meals
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
             }
+            case .failure(let error):
+                print("There was an error!", error.errorDescription!)
         }
     }
+}
 
     // MARK: - Table view data source
 

@@ -14,8 +14,8 @@ import UIKit
 
 class CategoriesListTableViewController: UITableViewController {
     
-    var categories: CategoriesTopLevelDictionary?
-    var tempCategoriesArray: [CategoriesTopLevelDictionary] = []
+    var categories: Categories?
+    var tempCategoriesArray: [Categories] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,11 @@ class CategoriesListTableViewController: UITableViewController {
             switch results {
             case .success(let categories):
                 self?.tempCategoriesArray = categories
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("There was an error!", error.errorDescription!)
             }
         }
     }
